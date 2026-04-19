@@ -1,21 +1,29 @@
 # ING Cookies
 
-Zadanie rekturacyjne, automatyzacja akceptowania cookie analitycznych na stronie `ing.pl`.
+Automatyzacja akceptowania cookie analitycznych na stronie `ing.pl`.
+Test po kolei weryfikuje:
+- wejście na stronę `ing.pl`
+- otwarcie panelu wyboru ciasteczek przez przycisk "Dostosuj"
+- przełączenie opcji "Cookies analityczne"
+- zaakceptowanie zaznaczonych cookies
+- sprawdzenie, czy istnieją ciasteczka `cookiePolicyGDPR` i `cookiePolicyGDPR__details`
+- sprawdzenie, czy `cookiePolicyGDPR` ma wartość 3 (zgodnie z tym, co wyszło po ręcznym sprawdzeniu)
+![image](./img/by-hand.png)
 
 ## Uruchomienie
 
 1. Sklonowanie repozytorium
 ```bash
-   git clone https://github.com/ksiemionek/ing-cookies.git
-   cd ing-cookies
+git clone https://github.com/ksiemionek/ing-cookies.git
+cd ing-cookies
 ```
 
 2. Stworzenie środowiska wirtualnego z potrzebnymi bibliotekami
 ```bash
-python -3 venv .venv
-source ./venv/bin/activate
+python -m venv .venv
+source .venv/bin/activate
 pip install -r requirements.txt
-playwright install
+playwright install --with-deps
 ```
 
 3. Uruchomienie testu
