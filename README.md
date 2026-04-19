@@ -45,8 +45,12 @@ pytest test_cookies.py --browser firefox
 ```
 ![image](./img/browser-tests.png)
 
+Uruchomienie we wszystkich przeglądarkach
+```bash
+pytest test_cookies.py --browser chromium --browser webkit --browser firefox
+```
+
 ## GitHub Actions
 Ze względu na widoczne na zdjęciu poniżej zabezpieczenie hCaptcha, automatyczne testy przez GitHub Actions są niemożliwe do przeprowadzenia.
 
 ![image](./img/ci-fail.png)
-
