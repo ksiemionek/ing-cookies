@@ -19,10 +19,26 @@ playwright install
 ```
 
 3. Uruchomienie testu
+Uruchomienie z widoczną przeglądarką
 ```bash
 pytest test_cookies.py --headed 
 ```
-lub z opóźnieniem, ułatwia widoczność kolejnych kroków
+
+Uruchomienie z opóźnieniem, ułatwia widoczność kolejnych kroków
 ```bash
 pytest test_cookies.py --headed --slowmo 1000
 ```
+
+Uruchomienie w konkretnej przeglądarce
+```bash
+pytest test_cookies.py --browser chromium
+pytest test_cookies.py --browser webkit
+pytest test_cookies.py --browser firefox
+```
+![image](./img/browser-tests.png)
+
+## GitHub Actions
+Ze względu na widoczne na zdjęciu poniżej zabezpieczenie hCaptcha, automatyczne testy przez GitHub Actions są niemożliwe do przeprowadzenia.
+
+![image](./img/ci-fail.png)
+
